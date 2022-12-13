@@ -1,6 +1,8 @@
 '''Comments Model'''
 
 from django.db import models
+from .post import Post
+from .user import User
 
 class Comment(models.Model):
     '''Coment Model'''

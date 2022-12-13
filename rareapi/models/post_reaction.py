@@ -2,6 +2,8 @@
 
 from django.db import models
 from .reaction import Reaction
+from .post import Post
+from .user import User
 
 class PostReaction(models.Model):
     '''Post Reactions class'''
