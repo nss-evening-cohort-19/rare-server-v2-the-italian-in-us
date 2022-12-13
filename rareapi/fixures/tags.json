@@ -1,0 +1,16 @@
+[
+  {
+    "model": "rareapi.tags",
+    "pk": 1,
+    "fields": {
+        "label": "Travels"
+    }
+  },
+  {
+    "model": "rareapi.tags",
+    "pk": 2,
+    "fields": {
+        "label": "Time is money"
+    }
+  }
+]
