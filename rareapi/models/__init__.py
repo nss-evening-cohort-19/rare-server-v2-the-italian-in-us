@@ -9,3 +9,4 @@ from .tags import Tags
 from .category import Category
 from .user_type_change_request import UserTypeChangeRequest
 from .post import Post
+from .comment import Comment

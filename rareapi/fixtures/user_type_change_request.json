@@ -1,22 +1,22 @@
 [
   {
-    "model": "rareapi.user_type_change_request",
+    "model": "rareapi.usertypechangerequest",
     "pk": 1,
     "fields": {
       "action": "promote",
       "admin_one_id": 1,
-      "admin_two_id": null,
-      "modified_user_id": 3
+      "admin_two_id": 2,
+      "modified_user_id": 2
     }
   },
   {
-    "model": "rareapi.user_type_change_request",
+    "model": "rareapi.usertypechangerequest",
     "pk": 2,
     "fields": {
       "action": "demote",
       "admin_one_id": 1,
       "admin_two_id": null,
-      "modified_user_id": 4
+      "modified_user_id": 2
     }
   }
 ]
