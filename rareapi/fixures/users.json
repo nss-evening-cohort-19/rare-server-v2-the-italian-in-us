@@ -1,0 +1,30 @@
+[
+  {
+    "model": "rareapi.user",
+    "pk": 1,
+    "fields": {
+        "first_name": "Albert",
+        "last_name": "Einstein",
+        "bio": "Albert Einstein, (born March 14, 1879, Ulm, Württemberg, Germany—died April 18, 1955, Princeton, New Jersey, U.S.), German-born physicist who developed the special and general theories of relativity and won the Nobel Prize for Physics in 1921 for his explanation of the photoelectric effect.",
+        "profile_image_url": "https://www.biography.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cg_face%2Cq_auto:good%2Cw_300/MTc5ODc5NjY5ODU0NjQzMzIy/gettyimages-3091504.jpg",
+        "emaiil": "albert.einstein@gmail.com",
+        "active": true,
+        "is_staff": true
+    }
+  },
+
+  {
+    "model": "rareapi.user",
+    "pk": 2,
+    "fields": {
+        "first_name": "Marie",
+        "last_name": "Curie",
+        "bio": "Marie Salomea Skłodowska Curie was a Polish and naturalized-French physicist and chemist who conducted pioneering research on radioactivity.",
+        "profile_image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Marie_Curie_c._1920s.jpg/1024px-Marie_Curie_c._1920s.jpg",
+        "emaiil": "marie.curie@gmail.com",
+        "active": true,
+        "is_staff": false
+    }
+  }
+
+]
