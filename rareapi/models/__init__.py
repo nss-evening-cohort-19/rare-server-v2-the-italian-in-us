@@ -7,5 +7,5 @@ from .subscription import Subscription
 from .post_tags import PostTags
 from .tags import Tags
 from .category import Category
-from .demotion_queue import DemotionQueue
+from .user_type_change_request import UserTypeChangeRequest
 from .post import Post
