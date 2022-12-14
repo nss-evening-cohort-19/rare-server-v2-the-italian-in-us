@@ -1,0 +1,32 @@
+[
+  {
+    "model": "rareapi.comment",
+    "pk": 1,
+    "fields": {
+      "author_id": 1,
+      "post_id": 1,
+      "content": "This post is so cool, I didn't even have to read the post to know how cool it is.",
+      "created_on": "2022-12-10"
+    }
+  },
+  {
+    "model": "rareapi.comment",
+    "pk": 2,
+    "fields": {
+      "author_id": 1,
+      "post_id": 1,
+      "content": "Well I think this post is silly.  I can't see it because I'm being created in a fixture and don't know what the post says",
+      "created_on": "2022-12-11"
+    }
+  },
+  {
+    "model": "rareapi.comment",
+    "pk": 3,
+    "fields": {
+      "author_id": 1,
+      "post_id": 1,
+      "content": "Calm down guys, were creating comments from the fixtures so the component can be styled along with the forms to create us.",
+      "created_on": "2022-12-12"
+    } 
+  }
+]
