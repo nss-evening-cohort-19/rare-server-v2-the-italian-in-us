@@ -5,7 +5,7 @@ from .user import User
 class Subscription(models.Model):
 
     follower_id = models.ForeignKey(User, on_delete=models.CASCADE)
-    author_id = models.ForeignKey(User, on_delete=models.CASCADE)
-    created_on = models.DateField()
+    author_id = models.ForeignKey(User, on_delete=models.CASCADE, related_name='author')
+    created_on = models.DateField(auto_now_add=True)
     ended_on = models.DateField()
     
