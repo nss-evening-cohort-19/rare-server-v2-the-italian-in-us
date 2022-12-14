@@ -11,4 +11,3 @@ class User(models.Model):
     created_on = models.DateField(auto_now_add=True)
     active = models.BooleanField()
     is_staff = models.BooleanField()
-  
