@@ -1,0 +1,82 @@
+[
+  {
+    "model": "rareapi.reaction",
+    "pk": 1,
+    "fields": {
+      "label": "Thumbs Up",
+      "image_url": "https://emoji.slack-edge.com/T03F2SDTJ/thumbsup_all/50096a1020.png"
+    }
+  },
+  {
+    "model": "rareapi.reaction",
+    "pk": 2,
+    "fields": {
+      "label": "Thumbs Down",
+      "image_url": "https://a.slack-edge.com/production-standard-emoji-assets/14.0/apple-medium/1f44e-1f3fc.png"
+    }
+  },
+  {
+    "model": "rareapi.reaction",
+    "pk": 3,
+    "fields": {
+      "label": "Laughing",
+      "image_url": "https://a.slack-edge.com/production-standard-emoji-assets/14.0/apple-medium/1f606.png"
+    }
+  },
+  {
+    "model": "rareapi.reaction",
+    "pk": 4,
+    "fields": {
+      "label": "Love",
+      "image_url": "https://a.slack-edge.com/production-standard-emoji-assets/14.0/apple-medium/2764-fe0f.png"
+    }
+  },
+  {
+    "model": "rareapi.reaction",
+    "pk": 5,
+    "fields": {
+      "label": "Cry",
+      "image_url": "https://a.slack-edge.com/production-standard-emoji-assets/14.0/apple-medium/1f622.png"
+    }
+  },
+  {
+    "model": "rareapi.reaction",
+    "pk": 6,
+    "fields": {
+      "label": "Grumpy Cat",
+      "image_url": "https://emoji.slack-edge.com/T03F2SDTJ/grumpycat/d86fd94c0e546ae0.png"
+    }
+  },
+  {
+    "model": "rareapi.reaction",
+    "pk": 7,
+    "fields": {
+      "label": "One Hundred",
+      "image_url": "https://a.slack-edge.com/production-standard-emoji-assets/14.0/apple-medium/1f4af.png"
+    }
+  },
+  {
+    "model": "rareapi.reaction",
+    "pk": 8,
+    "fields": {
+      "label": "Eyes",
+      "image_url": "https://a.slack-edge.com/production-standard-emoji-assets/14.0/apple-medium/1f440.png"
+    }
+  },
+  {
+    "model": "rareapi.reaction",
+    "pk": 9,
+    "fields": {
+      "label": "Celebrate",
+      "image_url": "https://a.slack-edge.com/production-standard-emoji-assets/14.0/apple-medium/1f389.png"
+    }
+  },
+  {
+    "model": "rareapi.reaction",
+    "pk": 10,
+    "fields": {
+      "label": "Party Robot",
+      "image_url": "https://emoji.slack-edge.com/T03F2SDTJ/among_us_party/c8d84aaba57905f9.gif"
+    }
+  }
+]
