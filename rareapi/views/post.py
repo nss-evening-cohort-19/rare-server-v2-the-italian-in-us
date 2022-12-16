@@ -21,6 +21,16 @@ class PostView(ViewSet):
         except Post.DoesNotExist as ex:
             return Response({'message': ex.args[0]}, status=status.HTTP_404_NOT_FOUND)
         
+    def list(self, request):
+        """Handle GET requests to get all posts
+
+        Returns:
+            Response -- JSON serialized list of posts
+        """
+        posts = Post.objects.all()
+        
+        serializer = PostSerializer(posts, many=True)
+        return Response(serializer.data)
 class PostSerializer(serializers.ModelSerializer):
       """JSON serializer for posts"""
       

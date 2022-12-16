@@ -20,7 +20,7 @@ from django.conf.urls import include
 from rest_framework import routers
 
 router = routers.DefaultRouter(trailing_slash=False)
-router.register(r'post', PostView, 'post')
+router.register(r'posts', PostView, 'post')
 router.register(r'tags', TagsView, 'tag')
 
 urlpatterns = [
