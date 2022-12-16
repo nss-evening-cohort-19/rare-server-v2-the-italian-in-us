@@ -29,6 +29,10 @@ class PostView(ViewSet):
         """
         posts = Post.objects.all()
         
+        category_of_posts = request.query_params.get('category', None)
+        if category_of_posts is not None:
+            posts = posts.filter(category_id=category_of_posts)
+        
         serializer = PostSerializer(posts, many=True)
         return Response(serializer.data)
 class PostSerializer(serializers.ModelSerializer):
