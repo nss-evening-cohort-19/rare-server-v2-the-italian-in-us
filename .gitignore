@@ -25,6 +25,7 @@ media
 
 #
 .vscode
+datafix.sql
 
 # Distribution / packaging
 .Python

@@ -5,7 +5,7 @@
     "fields": {
       "action": "promote",
       "admin_one_id": 1,
-      "admin_two_id": null,
+      "admin_two_id": 2,
       "modified_user_id": 2
     }
   },
@@ -16,7 +16,7 @@
       "action": "demote",
       "admin_one_id": 1,
       "admin_two_id": null,
-      "modified_user_id": 1
+      "modified_user_id": 2
     }
   }
 ]
