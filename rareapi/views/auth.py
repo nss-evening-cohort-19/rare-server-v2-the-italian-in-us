@@ -42,7 +42,16 @@ def register_user(request):
     user = User.objects.create(
         bio=request.data['bio'],
         uid=request.data['uid'],
-        name=request.data['name']
+        first_name=request.data['first_name'],
+        last_name=request.data['last_name'],
+        profile_image_url = request.data['profile_image_url'],
+        email = request.data['email'],
+        created_on = request.data['created_on'],
+        active = True,
+        is_staff = False
+        
+        
+        
     )
 
     # Return the gamer info to the client
