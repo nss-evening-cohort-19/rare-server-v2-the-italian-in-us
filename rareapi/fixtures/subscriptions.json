@@ -3,21 +3,10 @@
     "model": "rareapi.subscription",
     "pk": 1,
     "fields": {
-        "follower_id": 1,
-        "author_id": 2,
-        "created_on": "2022-12-13",
-        "ended_on": "2022-12-14"
-    }
-  },
-
-  {
-    "model": "rareapi.subscription",
-    "pk": 2,
-    "fields": {
-        "follower_id": 1,
-        "author_id": 2,
-        "created_on": "2022-12-11",
-        "ended_on": "2022-12-12"
+      "follower_id": 1,
+      "author_id": 2,
+      "created_on": "2022-12-13",
+      "ended_on": "2022-12-14"
     }
   }
 ]

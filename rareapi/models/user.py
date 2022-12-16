@@ -3,6 +3,7 @@ from django.db import models
 
 class User(models.Model):
 
+    uid = models.CharField(max_length=50, default="X2B6BcDVXNbCHo1svFqlGmBpMWl1")
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     bio = models.CharField(max_length=280)
