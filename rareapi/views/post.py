@@ -42,21 +42,45 @@ class PostView(ViewSet):
         Returns
             Response -- JSON serialized post instance
         """
-        user_id = User.objects.get(uid=request.data['uid'])
-        category_id = Category.objects.get(pk=request.data['category_id'])
+        user = User.objects.get(uid=request.data['uid'])
+        category = Category.objects.get(pk=request.data['category'])
         
         post = Post.objects.create(
             title=request.data['title'],
             publication_date=request.data['publication_date'],
             image_url=request.data['image_url'],
             content=request.data['content'],
-            approved=request.data['approved'],
-            user_id=user_id,
-            category_id=category_id
+            approved=True,
+            user_id=user,
+            category_id=category
         )
         
         serializer = PostSerializer(post)
         return Response(serializer.data)
+    
+    def update(self, request, pk):
+        """Handle PUT requests for a post
+
+        Returns:
+            Response -- Empty body with 204 status code
+        """
+        
+        post = Post.objects.get(pk=pk)
+        post.title = request.data['title']
+        post.publication_date = request.data['publication_date']
+        post.image_url = request.data['image_url']
+        post.content = request.data['content']
+        
+        post.save()
+        
+        return Response(None, status=status.HTTP_204_NO_CONTENT)
+    
+    def destroy(self, request, pk):
+        post = Post.objects.get(pk=pk)
+        post.delete()
+        
+        return Response(None, status=status.HTTP_204_NO_CONTENT)
+        
 class PostSerializer(serializers.ModelSerializer):
       """JSON serializer for posts"""
       
