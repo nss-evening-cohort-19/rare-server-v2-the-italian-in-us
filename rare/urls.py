@@ -17,7 +17,7 @@ from django.conf.urls import include
 from rest_framework import routers
 from django.contrib import admin
 from django.urls import path
-from rareapi.views import register_user, check_user, ReactionView, CommentView, PostReactionView, PostView, TagsView
+from rareapi.views import register_user, check_user, ReactionView, CommentView, PostReactionView, PostView, TagsView, UserView
 
 router = routers.DefaultRouter(trailing_slash=False)
 router.register(r'reactions', ReactionView, 'reaction')
@@ -25,6 +25,7 @@ router.register(r'postreactions', PostReactionView, 'postreaction')
 router.register(r'comments', CommentView, 'comment')
 router.register(r'posts', PostView, 'post')
 router.register(r'tags', TagsView, 'tag')
+router.register(r'users', UserView, 'user')
 
 
 urlpatterns = [
