@@ -4,7 +4,7 @@ from .category import Category
 
 class Post(models.Model):
 
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE, related_name='post_author')
     category_id = models.ForeignKey(Category, on_delete=models.CASCADE)
     title = models.CharField(max_length=50)
     publication_date = models.DateField()

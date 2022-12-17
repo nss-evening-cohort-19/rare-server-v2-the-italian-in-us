@@ -16,26 +16,14 @@
     "model": "rareapi.post",
     "pk": 2,
     "fields": {
-      "user_id": 2,
-      "category_id": 4,
-      "title": "The AI Who Thinking For Themselves",
-      "publication_date": "2020-05-08",
-      "image_url": "https://imageio.forbes.com/specials-images/imageserve/629506ac879c5363c159c3d9/Half-of-Artificial-Intelligence-robot-face/960x0.jpg?format=jpg&width=960",
-      "content": "Don't worry, Hollywood has been lying to you! Artificial Intelligence is my friend and it can be yours too!",
-      "approved": true
-    }
-  },
-  {
-    "model": "rareapi.post",
-    "pk": 3,
-    "fields": {
       "user_id": 1,
-      "category_id": 1,
-      "title": "Django To The Rescue",
-      "publication_date": "2020-11-08",
-      "image_url": "https://static.djangoproject.com/img/logos/django-logo-negative.1d528e2cb5fb.png",
-      "content": "Wanna easy way to make your Python project shine? Que Django! Easily mistaken for the hit movie with the same name and just as good!! Make life easier with Django today.",
-      "approved": true
+      "category_id": 2,
+      "title": "Learning Python",
+      "publication_date": "2020-10-08",
+      "image_url": "https://365datascience.com/resources/blog/2019-10-python-everything-you-should-know-1024x576.jpg",
+      "content": "Python is a great first step into the world of backend! You won't regret your decision. Let the Python open the door to your future",
+      "approved": false
     }
   }
+
 ]

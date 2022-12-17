@@ -1,4 +1,4 @@
-'''Import to inti for availability'''
+'''Import to init for availability'''
 
 from .reaction import Reaction
 from .post_reaction import PostReaction
