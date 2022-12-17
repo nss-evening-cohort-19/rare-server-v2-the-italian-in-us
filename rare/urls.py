@@ -17,14 +17,20 @@ from django.conf.urls import include
 from rest_framework import routers
 from django.contrib import admin
 from django.urls import path
-from rareapi.views import ReactionView, PostReactionView, CommentView
+from rareapi.views import ReactionView, PostReactionView, CommentView, TagsView
+from django.conf.urls import include
+from rareapi.views import register_user, check_user
 
 router = routers.DefaultRouter(trailing_slash=False)
 router.register(r'reactions', ReactionView, 'reaction')
 router.register(r'postreactions', PostReactionView, 'postreaction')
 router.register(r'comments', CommentView, 'comment')
+router.register(r'tags', TagsView, 'tag')
+
 
 urlpatterns = [
+    path('register', register_user),
+    path('checkuser', check_user),
     path('admin/', admin.site.urls),
     path('', include(router.urls))
 ]
