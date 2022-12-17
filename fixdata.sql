@@ -1,2 +1,2 @@
-DELETE from rareapi_subscription
-  Where id=2
+DELETE from rareapi_reaction
+  Where id=12
