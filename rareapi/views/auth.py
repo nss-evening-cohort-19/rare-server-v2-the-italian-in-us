@@ -49,9 +49,6 @@ def register_user(request):
         created_on = request.data['created_on'],
         active = True,
         is_staff = False
-        
-        
-        
     )
 
     # Return the gamer info to the client
