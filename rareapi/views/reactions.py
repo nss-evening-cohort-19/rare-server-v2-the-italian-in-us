@@ -21,7 +21,7 @@ class ReactionView(ViewSet):
       
       return Response(react_serialized)
     
-    def create(rels, request): 
+    def create(self, request): 
       '''handels create reaction'''
       reaction = Reaction.objects.create(
         label = request.data['label'],
