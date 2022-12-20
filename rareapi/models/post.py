@@ -1,6 +1,7 @@
 from django.db import models
 from .user import User
 from .category import Category
+from django.forms.models import model_to_dict
 
 class Post(models.Model):
 
@@ -11,3 +12,12 @@ class Post(models.Model):
     image_url = models.CharField(max_length=100)
     content = models.CharField(max_length=300)
     approved = models.BooleanField()
+    
+    @property
+    def tags(self):
+        db_tags = self.post_tags.all()
+        tags = []
+        for tag in db_tags:
+            single_tag = model_to_dict(tag)
+            tags.append(single_tag)
+        return tags
