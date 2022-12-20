@@ -6,3 +6,11 @@ class Reaction(models.Model):
     label = models.CharField(max_length=50)
     image_url = models.CharField(max_length=100)
     
+    @property
+    def clicked(self):
+        return self.__clicked
+    
+    @clicked.setter
+    def clicked(self, bool):
+        self.__clicked = bool
+    
