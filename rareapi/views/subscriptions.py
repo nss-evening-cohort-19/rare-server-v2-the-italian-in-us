@@ -15,10 +15,26 @@ class SubscriptionView(ViewSet):
     serializer = SubscriptionSerializer(subs, many=True)
     return Response(serializer.data)
     
-  def retrieve(self, request, pk):
-    """handles single Subscription get"""
+  def destroy(self, request, pk):
+    sub = Subscription.objects.get(pk=pk)
+    sub.delete()
+    return Response(None, status=status.HTTP_204_NO_CONTENT)
     
+  def create(self, request):
+    """handles POST requests for subscriptions"""
+    follower = User.objects.get(pk=request.data['follower_id'])
+    author = User.objects.get(pk=request.data['author_id'])
     
+    sub = Subscription.objects.create(
+      follower_id = follower,
+      author_id = author,
+      created_on = request.data['created_on'],
+      ended_on = request.data['ended_on']
+    )
+    
+    serializer = SubscriptionSerializer(sub)
+    
+    return Response(serializer.data)
     
     
 class SubscriptionSerializer(serializers.ModelSerializer):

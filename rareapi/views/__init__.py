@@ -6,3 +6,4 @@ from .comments import CommentView
 from .tags import TagsView
 from .user import UserView
 from .categories import CategoryView
+from .subscriptions import SubscriptionView
