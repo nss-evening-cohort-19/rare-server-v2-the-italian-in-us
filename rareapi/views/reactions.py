@@ -22,6 +22,7 @@ class ReactionView(ViewSet):
         for reaction in reactions:
           id = reaction.id
           reaction.clicked = len(PostReaction.objects.filter(user_id = user_id, post_id = post_id, reaction_id = id)) > 0
+          reaction.count = len(PostReaction.objects.filter(reaction_id = id, post_id = post_id))
           
       serializer = ReactionSerializer(reactions, many=True)
       react_serialized = serializer.data
@@ -52,4 +53,4 @@ class ReactionSerializer(serializers.ModelSerializer):
     '''JSON Serializer'''
     class Meta:
       model = Reaction
-      fields = ('id', 'label', 'image_url', 'clicked')
+      fields = ('id', 'label', 'image_url', 'clicked', 'count')

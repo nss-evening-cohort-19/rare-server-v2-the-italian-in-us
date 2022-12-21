@@ -13,4 +13,12 @@ class Reaction(models.Model):
     @clicked.setter
     def clicked(self, bool):
         self.__clicked = bool
+        
+    @property
+    def count(self):
+        return self.__count
+    
+    @count.setter
+    def count(self, value):
+        self.__count = value
     
