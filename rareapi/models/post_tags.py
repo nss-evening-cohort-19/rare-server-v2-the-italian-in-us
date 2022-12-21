@@ -4,5 +4,5 @@ from .post import Post
 
 class PostTags(models.Model):
   
-  tag = models.ForeignKey(Tags, on_delete=models.CASCADE, related_name='tags')
+  tag = models.ForeignKey(Tags, on_delete=models.CASCADE)
   post = models.ForeignKey(Post, on_delete=models.CASCADE)
