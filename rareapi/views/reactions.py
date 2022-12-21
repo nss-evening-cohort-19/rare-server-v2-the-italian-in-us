@@ -16,7 +16,7 @@ class ReactionView(ViewSet):
       
       user_id = request.query_params.get('userId', None)
       post_id = request.query_params.get('postId', None)
-          
+      
       
       if user_id and post_id is not None:
         for reaction in reactions:

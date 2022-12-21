@@ -14,9 +14,14 @@ class PostReactionView(ViewSet):
         post_reactions = PostReaction.objects.all()
         
         post_id = request.query_params.get('postId', None)
+        reaction_id = request.query_params.get('id', None)
+        user_id = request.query_params.get('userId', None)
         
-        if post_id is not None:
-          post_reactions = post_reactions.filter(post_id = post_id)
+        if post_id and reaction_id and user_id is not None:
+          post_reactions = post_reactions.filter(post_id = post_id, reaction_id = reaction_id, user_id = user_id)
+        
+        # if post_id is not None:
+        #   post_reactions = post_reactions.filter(post_id = post_id)
         
         serializer = PostReactionSerializer(post_reactions, many=True)
         post_reactions_serialized = serializer.data
@@ -30,9 +35,9 @@ class PostReactionView(ViewSet):
         
     def create(self, request):
         '''handels POST PR requests'''
-        post = Post.objects.get(pk=request.data['post_id'])
-        reaction = Reaction.objects.get(pk=request.data['reaction_id'])
-        user = User.objects.get(pk=request.data['user_id'])
+        post = Post.objects.get(pk=request.data['postId'])
+        reaction = Reaction.objects.get(pk=request.data['reactionId'])
+        user = User.objects.get(pk=request.data['userId'])
         
         post_reaction = PostReaction.objects.create(
           post_id = post,
