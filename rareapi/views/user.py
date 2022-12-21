@@ -21,3 +21,4 @@ class UserSerializer(serializers.ModelSerializer):
   class Meta:
     model = User
     fields = ('id', 'uid', 'first_name', 'last_name', 'bio', 'email', 'created_on', 'active', 'is_staff', 'profile_image_url', 'email', 'subscribers', 'posts', 'following')
+    depth = 2
