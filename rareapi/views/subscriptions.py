@@ -28,8 +28,7 @@ class SubscriptionView(ViewSet):
     sub = Subscription.objects.create(
       follower_id = follower,
       author_id = author,
-      created_on = request.data['created_on'],
-      ended_on = request.data['ended_on']
+      created_on = request.data['created_on']
     )
     
     serializer = SubscriptionSerializer(sub)
@@ -41,4 +40,4 @@ class SubscriptionSerializer(serializers.ModelSerializer):
   
   class Meta:
     model = Subscription
-    fields =('id', 'follower_id', 'author_id', 'created_on', 'ended_on')
+    fields =('id', 'follower_id', 'author_id', 'created_on')
