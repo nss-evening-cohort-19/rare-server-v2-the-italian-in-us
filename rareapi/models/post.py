@@ -14,10 +14,10 @@ class Post(models.Model):
     approved = models.BooleanField()
     
     @property
-    def tags(self):
-        db_tags = self.post_tags.all()
-        tags = []
+    def tags_on_post(self):
+        db_tags = self.tags.all()
+        post_tags = []
         for tag in db_tags:
             single_tag = model_to_dict(tag)
-            tags.append(single_tag)
-        return tags
+            post_tags.append(single_tag)
+        return post_tags
