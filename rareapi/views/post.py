@@ -16,6 +16,7 @@ class PostView(ViewSet):
         """
         try:
             post = Post.objects.get(pk=pk)
+            
             serializer = PostSerializer(post)
             return Response(serializer.data)
         except Post.DoesNotExist as ex:
@@ -43,7 +44,7 @@ class PostView(ViewSet):
             Response -- JSON serialized post instance
         """
         user = User.objects.get(uid=request.data['uid'])
-        category = Category.objects.get(pk=request.data['category'])
+        category = Category.objects.get(pk=request.data['category_id'])
         
         post = Post.objects.create(
             title=request.data['title'],
@@ -64,7 +65,6 @@ class PostView(ViewSet):
         Returns:
             Response -- Empty body with 204 status code
         """
-        
         
         post = Post.objects.get(pk=pk)
         post.edited_on = request.data['edited_on']
@@ -87,5 +87,5 @@ class PostSerializer(serializers.ModelSerializer):
       
       class Meta:
           model = Post
-          fields = ('id', 'user_id', 'category_id', 'title', 'publication_date', 'image_url', 'content', 'approved')
+          fields = ('id', 'user_id', 'category_id', 'title', 'publication_date', 'image_url', 'content', 'approved', 'edited_on')
           depth = 1         
