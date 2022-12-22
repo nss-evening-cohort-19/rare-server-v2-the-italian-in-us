@@ -24,7 +24,7 @@ class CommentView(ViewSet):
       '''handels list by post id'''
       comments = Comment.objects.all()
       
-      post_id = request.query_params.get('postid', None)
+      post_id = request.query_params.get('postId', None)
       if post_id is not None:
         comments = comments.filter(post_id = post_id)
       
