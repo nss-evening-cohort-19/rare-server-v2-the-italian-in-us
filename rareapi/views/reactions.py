@@ -4,7 +4,7 @@ from django.http import HttpResponseServerError
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers, status
-from rareapi.models import Reaction
+from rareapi.models import Reaction, PostReaction
 
 class ReactionView(ViewSet):
     '''Category type view'''
@@ -14,6 +14,16 @@ class ReactionView(ViewSet):
       
       reactions = Reaction.objects.all()
       
+      user_id = request.query_params.get('userId', None)
+      post_id = request.query_params.get('postId', None)
+      
+      
+      if user_id and post_id is not None:
+        for reaction in reactions:
+          id = reaction.id
+          reaction.clicked = len(PostReaction.objects.filter(user_id = user_id, post_id = post_id, reaction_id = id)) > 0
+          reaction.count = len(PostReaction.objects.filter(reaction_id = id, post_id = post_id))
+          
       serializer = ReactionSerializer(reactions, many=True)
       react_serialized = serializer.data
       for reaction in react_serialized:
@@ -43,4 +53,4 @@ class ReactionSerializer(serializers.ModelSerializer):
     '''JSON Serializer'''
     class Meta:
       model = Reaction
-      fields = ('id', 'label', 'image_url')
+      fields = ('id', 'label', 'image_url', 'clicked', 'count')
