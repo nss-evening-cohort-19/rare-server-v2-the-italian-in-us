@@ -20,7 +20,7 @@ class User(models.Model):
     @property
     def subscribers(self):
         """other users that have subscribed to this user"""
-        db_subs = self.followers.all()
+        db_subs = self.author.all()
         subs = []
         for sub in db_subs:
             sub = model_to_dict(sub)
@@ -40,10 +40,18 @@ class User(models.Model):
     @property
     def following(self):
         """users this user is following"""
-        db_users_following = self.author.all()
+        db_users_following = self.followers.all()
         users_following = []
         for user in db_users_following:
             user = model_to_dict(user)
             users_following.append(user)
         return users_following
+    
+    @property 
+    def subbed(self):
+        return self.__subbed
+    
+    @subbed.setter
+    def subbed(self, value):
+        self.__subbed = value
         

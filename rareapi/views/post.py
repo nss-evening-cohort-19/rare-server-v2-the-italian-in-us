@@ -44,7 +44,7 @@ class PostView(ViewSet):
             Response -- JSON serialized post instance
         """
         user = User.objects.get(uid=request.data['uid'])
-        category = Category.objects.get(pk=request.data['category'])
+        category = Category.objects.get(pk=request.data['category_id'])
         
         post = Post.objects.create(
             title=request.data['title'],
@@ -67,8 +67,8 @@ class PostView(ViewSet):
         """
         
         post = Post.objects.get(pk=pk)
+        post.edited_on = request.data['edited_on']
         post.title = request.data['title']
-        post.publication_date = request.data['publication_date']
         post.image_url = request.data['image_url']
         post.content = request.data['content']
         
@@ -87,5 +87,5 @@ class PostSerializer(serializers.ModelSerializer):
       
       class Meta:
           model = Post
-          fields = ('id', 'user_id', 'category_id', 'title', 'publication_date', 'image_url', 'content', 'approved')
+          fields = ('id', 'user_id', 'category_id', 'title', 'publication_date', 'image_url', 'content', 'approved', 'edited_on')
           depth = 1         
