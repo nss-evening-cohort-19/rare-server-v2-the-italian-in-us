@@ -6,6 +6,7 @@ from rest_framework.response import Response
 from rest_framework.decorators import action
 from rest_framework import serializers, status
 from rareapi.models import Post, User, Category,PostTags, Tags
+from rareapi.views.tags import TagsSerializer
 
 class PostView(ViewSet):
     """Rare Post View"""
@@ -17,6 +18,19 @@ class PostView(ViewSet):
         """
         try:
             post = Post.objects.get(pk=pk)
+        
+            filtered_post_tags = PostTags.objects.filter(post=post.id)
+            tags_on_posts = []
+            
+            for post_tag_obj in filtered_post_tags:
+                try:
+                    tags_on_post = Tags.objects.get(id=post_tag_obj.tag_id)
+
+                    tags_on_posts.append(tags_on_post.label)
+                except:
+                    pass
+            post.tags_on_posts = tags_on_posts
+
             serializer = PostSerializer(post)
             return Response(serializer.data)
         except Post.DoesNotExist as ex:
@@ -34,6 +48,18 @@ class PostView(ViewSet):
         if category_of_posts is not None:
             posts = posts.filter(category_id=category_of_posts)
         
+        for post in posts:
+            filtered_post_tags = PostTags.objects.filter(post=post.id)
+            tags_on_posts = []
+            
+            for post_tag_obj in filtered_post_tags:
+                try:
+                    tags_on_post = Tags.objects.get(id=post_tag_obj.tag_id)
+                    tags_on_posts.append(tags_on_post.label)
+                except:
+                    pass
+            post.tags_on_posts = tags_on_posts
+            
         serializer = PostSerializer(posts, many=True)
         return Response(serializer.data)
     
@@ -82,28 +108,28 @@ class PostView(ViewSet):
         
         return Response(None, status=status.HTTP_204_NO_CONTENT)
         
-    @action(methods=['post'], detail=True)
-    def add_tag(self, request, pk):
-        tag = Tags.objects.get(pk=request.data['id'])
-        post = Post.objects.get(pk=pk)
+    # @action(methods=['post'], detail=True)
+    # def add_tag(self, request, pk):
+    #     tag = Tags.objects.get(pk=request.data['id'])
+    #     post = Post.objects.get(pk=pk)
         
-        PostTags.objects.create(
-            tag = tag,
-            post = post
-        )
-        return Response({'message': 'Tag Added to Post'}, status=status.HTTP_201_CREATED)
+    #     PostTags.objects.create(
+    #         tag = tag,
+    #         post = post
+    #     )
+    #     return Response({'message': 'Tag Added to Post'}, status=status.HTTP_201_CREATED)
     
-    @action(methods=['delete'], detail=True)
-    def remove_tag(self, request, pk):
-        tag = Tags.objects.get(pk=request.data['id'])
-        post = Post.objects.get(pk=pk)
+    # @action(methods=['delete'], detail=True)
+    # def remove_tag(self, request, pk):
+    #     tag = Tags.objects.get(pk=request.data['id'])
+    #     post = Post.objects.get(pk=pk)
         
-        post_tag = PostTags.objects.create(
-            tag = tag,
-            post = post
-        )
-        post_tag.delete()
-        return Response({'message': 'Tag Removed from Post'}, status=status.HTTP_201_CREATED)
+    #     post_tag = PostTags.objects.create(
+    #         tag = tag,
+    #         post = post
+    #     )
+    #     post_tag.delete()
+    #     return Response(None, status=status.HTTP_204_NO_CONTENT)
 class PostSerializer(serializers.ModelSerializer):
       """JSON serializer for posts"""
       

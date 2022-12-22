@@ -19,4 +19,4 @@ class Post(models.Model):
     
     @tags_on_posts.setter
     def tags_on_posts(self, value):
-        self.__tags_on_posts
+        self.__tags_on_posts=value
