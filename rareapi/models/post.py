@@ -13,6 +13,7 @@ class Post(models.Model):
     content = models.CharField(max_length=300)
     approved = models.BooleanField()
     
+
     @property
     def tags_on_posts(self):
         return self.__tags_on_posts
@@ -20,3 +21,12 @@ class Post(models.Model):
     @tags_on_posts.setter
     def tags_on_posts(self, value):
         self.__tags_on_posts=value
+
+    @property
+    def edited_on(self):
+        return self.__edited_on
+    
+    @edited_on.setter
+    def edited_on(self, value):
+        self.__edited_on = value
+            
