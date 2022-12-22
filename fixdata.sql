@@ -1,2 +1,2 @@
-DELETE from rareapi_reaction
-  Where id=12
+DELETE from rareapi_postreaction
+  Where id=21

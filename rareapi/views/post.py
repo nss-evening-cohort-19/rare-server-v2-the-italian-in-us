@@ -107,29 +107,7 @@ class PostView(ViewSet):
         post.delete()
         
         return Response(None, status=status.HTTP_204_NO_CONTENT)
-        
-    # @action(methods=['post'], detail=True)
-    # def add_tag(self, request, pk):
-    #     tag = Tags.objects.get(pk=request.data['id'])
-    #     post = Post.objects.get(pk=pk)
-        
-    #     PostTags.objects.create(
-    #         tag = tag,
-    #         post = post
-    #     )
-    #     return Response({'message': 'Tag Added to Post'}, status=status.HTTP_201_CREATED)
-    
-    # @action(methods=['delete'], detail=True)
-    # def remove_tag(self, request, pk):
-    #     tag = Tags.objects.get(pk=request.data['id'])
-    #     post = Post.objects.get(pk=pk)
-        
-    #     post_tag = PostTags.objects.create(
-    #         tag = tag,
-    #         post = post
-    #     )
-    #     post_tag.delete()
-    #     return Response(None, status=status.HTTP_204_NO_CONTENT)
+
 class PostSerializer(serializers.ModelSerializer):
       """JSON serializer for posts"""
       
