@@ -16,6 +16,7 @@ class PostView(ViewSet):
         """
         try:
             post = Post.objects.get(pk=pk)
+            
             serializer = PostSerializer(post)
             return Response(serializer.data)
         except Post.DoesNotExist as ex:
