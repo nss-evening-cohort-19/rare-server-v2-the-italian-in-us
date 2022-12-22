@@ -3,8 +3,10 @@
 from django.http import HttpResponseServerError
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
+from rest_framework.decorators import action
 from rest_framework import serializers, status
-from rareapi.models import Post, User, Category
+from rareapi.models import Post, User, Category,PostTags, Tags
+from rareapi.views.tags import TagsSerializer
 
 class PostView(ViewSet):
     """Rare Post View"""
@@ -16,7 +18,19 @@ class PostView(ViewSet):
         """
         try:
             post = Post.objects.get(pk=pk)
+        
+            filtered_post_tags = PostTags.objects.filter(post=post.id)
+            tags_on_posts = []
             
+            for post_tag_obj in filtered_post_tags:
+                try:
+                    tags_on_post = Tags.objects.get(id=post_tag_obj.tag_id)
+
+                    tags_on_posts.append(tags_on_post.label)
+                except:
+                    pass
+            post.tags_on_posts = tags_on_posts
+
             serializer = PostSerializer(post)
             return Response(serializer.data)
         except Post.DoesNotExist as ex:
@@ -34,6 +48,18 @@ class PostView(ViewSet):
         if category_of_posts is not None:
             posts = posts.filter(category_id=category_of_posts)
         
+        for post in posts:
+            filtered_post_tags = PostTags.objects.filter(post=post.id)
+            tags_on_posts = []
+            
+            for post_tag_obj in filtered_post_tags:
+                try:
+                    tags_on_post = Tags.objects.get(id=post_tag_obj.tag_id)
+                    tags_on_posts.append(tags_on_post.label)
+                except:
+                    pass
+            post.tags_on_posts = tags_on_posts
+            
         serializer = PostSerializer(posts, many=True)
         return Response(serializer.data)
     
@@ -81,11 +107,11 @@ class PostView(ViewSet):
         post.delete()
         
         return Response(None, status=status.HTTP_204_NO_CONTENT)
-        
+
 class PostSerializer(serializers.ModelSerializer):
       """JSON serializer for posts"""
       
       class Meta:
           model = Post
-          fields = ('id', 'user_id', 'category_id', 'title', 'publication_date', 'image_url', 'content', 'approved', 'edited_on')
-          depth = 1         
+          fields = ('id', 'user_id', 'category_id', 'title', 'publication_date', 'image_url', 'content', 'approved', 'tags_on_posts', 'edited_on')
+          depth = 1        

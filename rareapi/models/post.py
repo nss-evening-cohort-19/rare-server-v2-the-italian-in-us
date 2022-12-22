@@ -1,6 +1,7 @@
 from django.db import models
 from .user import User
 from .category import Category
+from django.forms.models import model_to_dict
 
 class Post(models.Model):
 
@@ -11,6 +12,15 @@ class Post(models.Model):
     image_url = models.CharField(max_length=100)
     content = models.CharField(max_length=300)
     approved = models.BooleanField()
+    
+
+    @property
+    def tags_on_posts(self):
+        return self.__tags_on_posts
+    
+    @tags_on_posts.setter
+    def tags_on_posts(self, value):
+        self.__tags_on_posts=value
 
     @property
     def edited_on(self):
