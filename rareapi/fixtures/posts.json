@@ -4,7 +4,7 @@
     "pk": 1,
     "fields": {
       "user_id": 1,
-      "category_id": 2,
+      "category_id": 1,
       "title": "Learning Python",
       "publication_date": "2020-10-08",
       "image_url": "https://365datascience.com/resources/blog/2019-10-python-everything-you-should-know-1024x576.jpg",
@@ -17,7 +17,7 @@
     "pk": 2,
     "fields": {
       "user_id": 1,
-      "category_id": 2,
+      "category_id": 1,
       "title": "Learning Python",
       "publication_date": "2020-10-08",
       "image_url": "https://365datascience.com/resources/blog/2019-10-python-everything-you-should-know-1024x576.jpg",

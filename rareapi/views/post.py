@@ -65,9 +65,10 @@ class PostView(ViewSet):
             Response -- Empty body with 204 status code
         """
         
+        
         post = Post.objects.get(pk=pk)
+        post.edited_on = request.data['edited_on']
         post.title = request.data['title']
-        post.publication_date = request.data['publication_date']
         post.image_url = request.data['image_url']
         post.content = request.data['content']
         
