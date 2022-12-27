@@ -7,6 +7,10 @@ from rest_framework.decorators import action
 from rest_framework import serializers, status
 from rareapi.models import Post, User, Category,PostTags, Tags
 from rareapi.views.tags import TagsSerializer
+from rest_framework.decorators import action
+from rareapi.views.user import UserSerializer
+from rareapi.serializers import PostSerializer
+
 
 class PostView(ViewSet):
     """Rare Post View"""
@@ -107,11 +111,20 @@ class PostView(ViewSet):
         post.delete()
         
         return Response(None, status=status.HTTP_204_NO_CONTENT)
+    
+    @action(methods=['get'], detail=True)
+    def getSubscribedPosts(self, request, pk):
+        """Get user custom feed based on subscriptions"""
+        user = User.objects.get(pk=pk)
+        follower_ids = [user['author_id'] for user in user.following]
+        follower_list = [User.objects.get(pk=id) for id in follower_ids]
+        follower_serialized = UserSerializer(follower_list, many=True)
+        posts = [post for user in follower_serialized.data for post in user['posts']]
+        instances = [Post.objects.get(pk=post['user_id']) for post in posts]
+        serialized = PostSerializer(instances, many=True)
+        
+        return Response(serialized.data)    
 
-class PostSerializer(serializers.ModelSerializer):
-      """JSON serializer for posts"""
-      
-      class Meta:
-          model = Post
-          fields = ('id', 'user_id', 'category_id', 'title', 'publication_date', 'image_url', 'content', 'approved', 'tags_on_posts', 'edited_on')
-          depth = 1        
+        
+        
+        
