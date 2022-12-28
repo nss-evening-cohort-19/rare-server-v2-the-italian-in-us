@@ -86,6 +86,15 @@ class PostView(ViewSet):
             category_id=category
         )
         
+        #capture post tags from form and create them
+        tag_ids = request.data['tag_ids']
+        
+        tags = [Tags.objects.get(pk=tag_id) for tag_id in tag_ids]
+        
+        for tag in tags:
+            post_tag = PostTags(post=post, tag=tag)
+            post_tag.save()
+        
         serializer = PostSerializer(post)
         return Response(serializer.data)
     
@@ -123,7 +132,7 @@ class PostView(ViewSet):
         instances = [Post.objects.get(pk=post['user_id']) for post in posts]
         serialized = PostSerializer(instances, many=True)
         
-        return Response(serialized.data)    
+        return Response(serialized.data)
 
         
         
