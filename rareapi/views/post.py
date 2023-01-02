@@ -9,8 +9,6 @@ from rareapi.models import Post, User, Category,PostTags, Tags
 from rareapi.views.tags import TagsSerializer
 from rest_framework.decorators import action
 from rareapi.views.user import UserSerializer
-from rareapi.serializers import PostSerializer
-
 
 class PostView(ViewSet):
     """Rare Post View"""
@@ -134,6 +132,12 @@ class PostView(ViewSet):
         
         return Response(serialized.data)
 
-        
+class PostSerializer(serializers.ModelSerializer):
+      """JSON serializer for posts"""
+      
+      class Meta:
+          model = Post
+          fields = ('id', 'user_id', 'category_id', 'title', 'publication_date', 'image_url', 'content', 'approved', 'tags_on_posts', 'edited_on')
+          depth = 1    
         
         
