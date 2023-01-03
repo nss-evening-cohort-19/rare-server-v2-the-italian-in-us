@@ -127,7 +127,7 @@ class PostView(ViewSet):
         follower_list = [User.objects.get(pk=id) for id in follower_ids]
         follower_serialized = UserSerializer(follower_list, many=True)
         posts = [post for user in follower_serialized.data for post in user['posts']]
-        instances = [Post.objects.get(pk=post['user_id']) for post in posts]
+        instances = [Post.objects.get(pk=post['id']) for post in posts]
         serialized = PostSerializer(instances, many=True)
         
         return Response(serialized.data)
