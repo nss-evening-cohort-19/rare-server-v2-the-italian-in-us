@@ -20,6 +20,7 @@ Tech Stack: Python with Django framework, SQLite, Postman, React with Next.js, R
 
 ### Installations and database setup
 Run the bulleted commands from the command line.
+
   _Install dependencies_
   * `pyenv install`
   _Migrate tables to database_
