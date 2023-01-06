@@ -37,7 +37,7 @@ Run the bulleted commands from the command line
     "--load-plugins=pylint_django",
     "--django-settings-module=rare.settings",
 ],
-} ```
+}```
 
 ### Start the server
 * run `python manage.py runserver` in the terminal.
