@@ -55,8 +55,8 @@ Quit the server with CONTROL-C.</sub>
 
 ### Suggested endpoints
 
-###### Select `GET` next to the request URL
-###### Paste bulleted endpoints into Request URL
+* Select `GET` next to the request URL
+* Paste bulleted endpoints into Request URL
 
 ##### Posts
 * http://127.0.0.1:8000/posts
