@@ -8,7 +8,7 @@ Tech Stack: Python with Django framework, SQLite, Postman, React with Next.js, R
 
 ## Running The Project Locally for endpoint testing
 ### Clone the repository
-  * In this repository, locate and click the green <button><> Code</button> button 
+  * In this repository, locate and click the green `<> Code` button 
   * Insure the SSH option is selected and copy the clone string
   * Navigate to the directory of you choosing in your terminal 
   * Run the command: git clone <"clone string"> 
@@ -37,7 +37,8 @@ Run the bulleted commands from the command line
     "--load-plugins=pylint_django",
     "--django-settings-module=rare.settings",
 ],
-}```
+}
+```
 
 ### Start the server
 * run `python manage.py runserver` in the terminal.
