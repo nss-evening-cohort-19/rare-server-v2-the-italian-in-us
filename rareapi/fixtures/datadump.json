@@ -1,0 +1,340 @@
+[
+  {
+    "model": "rareapi.reaction",
+    "pk": 1,
+    "fields": {
+      "label": "Thumbs Up",
+      "image_url": "https://emoji.slack-edge.com/T03F2SDTJ/thumbsup_all/50096a1020.png"
+    }
+  },
+  {
+    "model": "rareapi.reaction",
+    "pk": 2,
+    "fields": {
+      "label": "Thumbs Down",
+      "image_url": "https://a.slack-edge.com/production-standard-emoji-assets/14.0/apple-medium/1f44e-1f3fc.png"
+    }
+  },
+  {
+    "model": "rareapi.reaction",
+    "pk": 3,
+    "fields": {
+      "label": "Laughing",
+      "image_url": "https://a.slack-edge.com/production-standard-emoji-assets/14.0/apple-medium/1f606.png"
+    }
+  },
+  {
+    "model": "rareapi.reaction",
+    "pk": 4,
+    "fields": {
+      "label": "Love",
+      "image_url": "https://a.slack-edge.com/production-standard-emoji-assets/14.0/apple-medium/2764-fe0f.png"
+    }
+  },
+  {
+    "model": "rareapi.reaction",
+    "pk": 5,
+    "fields": {
+      "label": "Cry",
+      "image_url": "https://a.slack-edge.com/production-standard-emoji-assets/14.0/apple-medium/1f622.png"
+    }
+  },
+  {
+    "model": "rareapi.reaction",
+    "pk": 6,
+    "fields": {
+      "label": "Grumpy Cat",
+      "image_url": "https://emoji.slack-edge.com/T03F2SDTJ/grumpycat/d86fd94c0e546ae0.png"
+    }
+  },
+  {
+    "model": "rareapi.reaction",
+    "pk": 7,
+    "fields": {
+      "label": "One Hundred",
+      "image_url": "https://a.slack-edge.com/production-standard-emoji-assets/14.0/apple-medium/1f4af.png"
+    }
+  },
+  {
+    "model": "rareapi.reaction",
+    "pk": 8,
+    "fields": {
+      "label": "Eyes",
+      "image_url": "https://a.slack-edge.com/production-standard-emoji-assets/14.0/apple-medium/1f440.png"
+    }
+  },
+  {
+    "model": "rareapi.reaction",
+    "pk": 9,
+    "fields": {
+      "label": "Celebrate",
+      "image_url": "https://a.slack-edge.com/production-standard-emoji-assets/14.0/apple-medium/1f389.png"
+    }
+  },
+  {
+    "model": "rareapi.reaction",
+    "pk": 10,
+    "fields": {
+      "label": "Party Robot",
+      "image_url": "https://emoji.slack-edge.com/T03F2SDTJ/among_us_party/c8d84aaba57905f9.gif"
+    }
+  },
+  {
+    "model": "rareapi.user",
+    "pk": 1,
+    "fields": {
+      "uid": "e1YJhTEtk4UYrwkiSiHbjVveMcM2",
+      "first_name": "Albert",
+      "last_name": "Einstein",
+      "bio": "Albert Einstein, (born March 14, 1879, Ulm, Württemberg, Germany—died April 18, 1955, Princeton, New Jersey, U.S.), German-born physicist who developed the special and general theories of relativity and won the Nobel Prize for Physics in 1921 for his explanation of the photoelectric effect.",
+      "profile_image_url": "https://www.biography.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cg_face%2Cq_auto:good%2Cw_300/MTc5ODc5NjY5ODU0NjQzMzIy/gettyimages-3091504.jpg",
+      "email": "albert.einstein@gmail.com",
+      "created_on": "2022-12-13",
+      "active": true,
+      "is_staff": true
+    }
+  },
+  {
+    "model": "rareapi.user",
+    "pk": 2,
+    "fields": {
+      "uid": "5e8Pcyal88S3QXqeS8m4UPZJAEA2",
+      "first_name": "Marie",
+      "last_name": "Curie",
+      "bio": "Marie Salomea Skłodowska Curie was a Polish and naturalized-French physicist and chemist who conducted pioneering research on radioactivity.",
+      "profile_image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Marie_Curie_c._1920s.jpg/1024px-Marie_Curie_c._1920s.jpg",
+      "email": "marie.curie@gmail.com",
+      "created_on": "2022-12-12",
+      "active": true,
+      "is_staff": false
+    }
+  },
+  {
+    "model": "rareapi.category",
+    "pk": 1,
+    "fields": {
+      "label": "Favorites"
+    }
+  },
+  {
+    "model": "rareapi.category",
+    "pk": 2,
+    "fields": {
+      "label": "Happening Now"
+    }
+  },
+  {
+    "model": "rareapi.category",
+    "pk": 3,
+    "fields": {
+      "label": "Exploring the Past"
+    }
+  },
+  {
+    "model": "rareapi.category",
+    "pk": 4,
+    "fields": {
+      "label": "Changing Our Future"
+    }
+  },
+  {
+    "model": "rareapi.category",
+    "pk": 6,
+    "fields": {
+      "label": "Something New"
+    }
+  },
+  {
+    "model": "rareapi.category",
+    "pk": 9,
+    "fields": {
+      "label": "Coding"
+    }
+  },
+  {
+    "model": "rareapi.category",
+    "pk": 10,
+    "fields": {
+      "label": "Outdoors"
+    }
+  },
+  {
+    "model": "rareapi.post",
+    "pk": 1,
+    "fields": {
+      "user_id": 1,
+      "category_id": 1,
+      "title": "Learning Python",
+      "publication_date": "2020-10-08",
+      "image_url": "https://365datascience.com/resources/blog/2019-10-python-everything-you-should-know-1024x576.jpg",
+      "content": "Python is a great first step into the world of backend! You won't regret your decision. Let the Python open the door to your future",
+      "approved": false
+    }
+  },
+  {
+    "model": "rareapi.post",
+    "pk": 6,
+    "fields": {
+      "user_id": 2,
+      "category_id": 4,
+      "title": "Coffee meets Tech and Sustainability and Some",
+      "publication_date": "2023-01-03",
+      "image_url": "https://bellwethercoffee.com/static/9301c5363327dcbd86dfbcaf9462b5c0/8c081/220707_Bellwether_CoffeeWaterLab_1810.jpg",
+      "content": "Innovative technology for incredible coffee.  Automated Roast Control Automated Roast Control is a user-friendly interface allowing anyone to roast craft quality coffee with no experience required. Simply select a coffee and Digital Roast Profile to begin roasting.     Adaptive Closed Loop System Our Adaptive Closed Loop System provides superior consistency, and the most precise thermal control of any commercial roaster.    Digital Roast Profiles Digital Roast Profiles are software versions of handcrafted roasts accessible on your Bellwether with the touch of a button. Profiles are created by Bellwether’s master roasters and customizable to meet any style.     Bellwether Marketplace The Bellwether Marketplace is an ecommerce store for high quality, sustainably sourced green coffees from around the world. Every coffee comes with Digital Roast Profiles for every roast style. ",
+      "approved": true
+    }
+  },
+  {
+    "model": "rareapi.post",
+    "pk": 7,
+    "fields": {
+      "user_id": 2,
+      "category_id": 4,
+      "title": "The Climbing Topos of the Future? 3D Climbing Maps with Climb Assist",
+      "publication_date": "2023-01-03",
+      "image_url": "https://www.rockandice.com/wp-content/uploads/2018/07/Screen-Shot-2018-07-02-at-9.40.42-AM-e1530546091800.png?crop=535:301&width=1070&enable=upscale",
+      "content": "Climber Brian Uyeno is taking climbing topos to the next level with his project, Climb Assist. His website (and hopefully soon, mobile app) allows climbers to inspect routes with never before seen levels of detail and accuracy. Uyeno utilizes a technology called photogrammetry (basically taking lots of pictures from all angles and melding them together) to create three-dimensional maps of climbing crags.",
+      "approved": true
+    }
+  },
+  {
+    "model": "rareapi.postreaction",
+    "pk": 235,
+    "fields": {
+      "user_id": 2,
+      "post_id": 1,
+      "reaction_id": 6
+    }
+  },
+  {
+    "model": "rareapi.postreaction",
+    "pk": 239,
+    "fields": {
+      "user_id": 1,
+      "post_id": 6,
+      "reaction_id": 7
+    }
+  },
+  {
+    "model": "rareapi.postreaction",
+    "pk": 240,
+    "fields": {
+      "user_id": 2,
+      "post_id": 6,
+      "reaction_id": 10
+    }
+  },
+  {
+    "model": "rareapi.subscription",
+    "pk": 3,
+    "fields": {
+      "follower_id": 1,
+      "author_id": 2,
+      "created_on": "2023-01-04"
+    }
+  },
+  {
+    "model": "rareapi.tags",
+    "pk": 1,
+    "fields": {
+      "label": "Travels"
+    }
+  },
+  {
+    "model": "rareapi.tags",
+    "pk": 2,
+    "fields": {
+      "label": "Time is money"
+    }
+  },
+  {
+    "model": "rareapi.tags",
+    "pk": 5,
+    "fields": {
+      "label": "getRad"
+    }
+  },
+  {
+    "model": "rareapi.posttags",
+    "pk": 1,
+    "fields": {
+      "tag": 1,
+      "post": 1
+    }
+  },
+  {
+    "model": "rareapi.posttags",
+    "pk": 2,
+    "fields": {
+      "tag": 2,
+      "post": 1
+    }
+  },
+  {
+    "model": "rareapi.posttags",
+    "pk": 3,
+    "fields": {
+      "tag": 1,
+      "post": 6
+    }
+  },
+  {
+    "model": "rareapi.posttags",
+    "pk": 4,
+    "fields": {
+      "tag": 1,
+      "post": 7
+    }
+  },
+  {
+    "model": "rareapi.comment",
+    "pk": 1,
+    "fields": {
+      "author_id": 1,
+      "post_id": 1,
+      "content": "This post is so cool, I didn't even have to read the post to know how cool it is.",
+      "created_on": "2022-12-10"
+    }
+  },
+  {
+    "model": "rareapi.comment",
+    "pk": 2,
+    "fields": {
+      "author_id": 1,
+      "post_id": 1,
+      "content": "Well I think this post is silly.  I can't see it because I'm being created in a fixture and don't know what the post says",
+      "created_on": "2022-12-11"
+    }
+  },
+  {
+    "model": "rareapi.comment",
+    "pk": 3,
+    "fields": {
+      "author_id": 1,
+      "post_id": 1,
+      "content": "Calm down guys, were creating comments from the fixtures so the component can be styled along with the forms to create us.",
+      "created_on": "2022-12-12"
+    }
+  },
+  {
+    "model": "rareapi.comment",
+    "pk": 12,
+    "fields": {
+      "author_id": 1,
+      "post_id": 1,
+      "content": "New Comments go here",
+      "created_on": "2023-01-03"
+    }
+  },
+  {
+    "model": "rareapi.comment",
+    "pk": 13,
+    "fields": {
+      "author_id": 1,
+      "post_id": 6,
+      "content": "How much energy does the machine consume to roast 1lb of beans.",
+      "created_on": "2023-01-03"
+    }
+  }
+  ]
+  
