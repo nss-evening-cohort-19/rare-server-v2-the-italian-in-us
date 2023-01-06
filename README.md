@@ -19,7 +19,7 @@ Tech Stack: Python with Django framework, SQLite, Postman, React with Next.js, R
   * Select: db.sqlite3
 
 ### Installations and database setup
-Run the bulleted commands from the command line
+Run the bulleted commands from the command line.
   _Install dependencies_
   * `pyenv install`
   _Migrate tables to database_
@@ -30,7 +30,8 @@ Run the bulleted commands from the command line
 ### Update the linter
   _.vscode/settings.json_
   *  replace code with:
-  ``` {
+  ``` 
+  {
   "python.linting.pylintEnabled": true,
   "python.linting.enabled": true,
   "python.linting.pylintArgs": [
