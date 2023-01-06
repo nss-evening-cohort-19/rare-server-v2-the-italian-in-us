@@ -93,7 +93,7 @@ Reactions on a post is a many to many relationship in our application.  A post_r
 ```
 * Send the request
 
-This call will create a new post_reaction node. We decided to explore handeling case separation between Python and JS on the server in this instance allowing the front-end to send camelCase keys when creating. Send the GET reactions request again to see that the count for reaction id: 8 has updated and will now be clicked: False.
+This call will create a new post_reaction node. We decided to explore handeling case separation between Python and JS on the server in this instance, allowing the front-end to send camelCase keys when creating. Send the GET reactions request again to see that the count for reaction id: 8 has updated and will now be clicked: False.
 
 
 ## Front-End Repository
