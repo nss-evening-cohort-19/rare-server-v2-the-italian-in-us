@@ -1,7 +1,7 @@
 # Rare-Italian Server
 
 ## Project Overview
-This full stack group project was completed over a 2-week sprint to plan, execute, and practice our command over the development of a server and database. The front-end potion is available [here](https://github.com/nss-evening-cohort-19/rare-client-v2-the-italian-in-us). Working on this project during a time of discovery, we decided to focus on the handling of logic and case conversions in the backend with the goal of clean API calls returning exactly what we needed to the front end. 
+This full stack group project was completed over a 2-week sprint to plan, execute, and practice our command over the development of a server and database. The front-end portion is available [here](https://github.com/nss-evening-cohort-19/rare-client-v2-the-italian-in-us). The team decided to focus on the handling of logic and case conversions in the backend with the goal of clean API calls returning exactly what we needed to the front end. 
 
 Tech Stack: Python with Django framework, SQLite, Postman, React with Next.js, React-Bootstrap.
 
