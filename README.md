@@ -43,11 +43,13 @@ Run the bulleted commands from the command line to _Install dependencies_, _Migr
 ### Start the server
 * run `python manage.py runserver` in the terminal.
 You should see:
-<sub>System check identified no issues (0 silenced).
+```
+<sub>System check identified no issues (0 silenced)
 January 06, 2023 - 16:03:25
 Django version 4.1.3, using settings 'rare.settings'
 Starting development server at http://127.0.0.1:8000/
 Quit the server with CONTROL-C.</sub>
+```
 
 ### Postman
 * Open Postman and create a new directory
